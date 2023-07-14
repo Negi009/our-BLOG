@@ -21,5 +21,13 @@
         </div>
       </li>
     </ul>
+
+    <ul class="navbar-nav mt-auto">
+      <li class="nav-item">
+      <% if logged_in?%>
+        <%= link_to "Logout", logout_path, class:"btn btn-outline-dark", method: :delete%>
+      <%end%>
+      </li>
+    </ul>
   </div>
 </nav>
