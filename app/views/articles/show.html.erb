@@ -1,10 +1,11 @@
-<h2 class="text-center mt-4"><%= @article.title%></h2>
+<h2 class="text-center  mt-4"><strong><%= @article.title%></strong></h2>
   <div class="container mt-4">
     <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
       <div class="card mb-3">
       <% if @article.image.attached? %>
-        <%= img_tag (@article.image)%>
-      <% end %>
+        <%= image_tag @article.image,class: "rounded shadow mx-auto d-block mt-4", style: "width: 720px; display: block" %>
+      <%end%>
       <div class="card-body">
         <h5 class="card-title">
       
@@ -15,6 +16,7 @@
         <p class="card-text"><small class="text-muted">
         Created <%= @article.created_at.time.strftime("%d %B,%Y")%>
         </p>
+      </div>
       </div>
       </div>
     </div>
