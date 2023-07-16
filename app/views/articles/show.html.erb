@@ -2,15 +2,18 @@
   <div class="container mt-4">
     <div class="row justify-content-md-center">
     <div class="col-8 mt-4">
-      <div class="card mb-3">
+      <div class="card mb-3 ">
       <% if @article.image.attached? %>
         <%= image_tag @article.image,class: "rounded shadow mx-auto d-block mt-4", style: "width: 720px; display: block" %>
       <%end%>
       <div class="card-body">
-        <h5 class="card-title">
-      
+        <h5 class="card-title font-italic">
+        <%if @article.user %>
+        by <%= link_to @article.user.username, user_path(@article.user) %>
+        <%end%>
         </h5>
-        <p class="card-text text-left">
+        <hr class="my-4">
+        <p class="card-text text-left ">
         <%= simple_format(@article.description)%>
         </p>
         <p class="card-text"><small class="text-muted">

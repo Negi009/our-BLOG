@@ -9,3 +9,13 @@
       <%=link_to "Edit your Profile", edit_user_path(@user), class: "btn btn-outline-info" %>
     </div>
   <% end %>
+
+  <div class="flickr_pagination mt-4">
+      <%= will_paginate @articles, :container => false %>
+  </div>
+
+  <%= render 'articles/article'%>
+
+  <div class="flickr_pagination mt-4">
+      <%= will_paginate @articles, :container => false %>
+  </div>
