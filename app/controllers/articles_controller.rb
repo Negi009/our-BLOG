@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
+  before_action :require_user, only: [:index, :show]
   before_action :article_find, only: [:show, :edit, :update, :destroy ]
+  
   def index
     @articles = Article.all
   end 
