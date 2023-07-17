@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Logged in Successfully"
       redirect_to user
     else 
-      flash[:alert] = "Invalid Credentails"
+      flash.now[:alert] = "Invalid Credentails"
       render 'new'
     end
   end
